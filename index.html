@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f1e7">
+  <title>Jibin & Nikhila | Wedding Invitation</title>
+  <style>
+    :root {
+      --cream: #fbf6ed;
+      --paper: #fffaf1;
+      --gold: #bd9145;
+      --gold2: #e5cf9f;
+      --wine: #682b36;
+      --ink: #46352f;
+      --muted: #887365
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at top, #fffaf2 0, #f2e8d8 70%);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 22px 14px 44px
+    }
+
+    .invite {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--gold2);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 22px 70px rgba(80, 49, 25, .15)
+    }
+
+    .invite:before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(189, 145, 69, .45);
+      border-radius: 19px;
+      pointer-events: none;
+      z-index: 4
+    }
+
+    .photo-hero {
+      position: relative;
+      height: clamp(260px, 58vw, 430px);
+      overflow: hidden;
+      background: #31535a
+    }
+
+    .photo-hero:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 25, 27, .08) 35%, rgba(40, 25, 20, .12) 70%, rgba(251, 246, 237, .95) 100%)
+    }
+
+    .photo-hero img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 42%
+    }
+
+    .photo-caption {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      bottom: 24px;
+      text-align: center;
+      color: #fff9ed;
+      text-shadow: 0 2px 12px #1c1512a8;
+      font-size: 13px;
+      letter-spacing: .18em;
+      text-transform: uppercase
+    }
+
+    .content {
+      position: relative;
+      text-align: center;
+      padding: 26px 24px 38px;
+      background:
+        radial-gradient(circle at 8% 20%, rgba(255, 255, 255, .9), transparent 25%),
+        radial-gradient(circle at 90% 65%, rgba(237, 215, 175, .22), transparent 28%),
+        linear-gradient(180deg, #fffaf1, #f9f0e2)
+    }
+
+    .content:before {
+      content: "";
+      position: absolute;
+      inset: 13px;
+      border: 1px solid rgba(189, 145, 69, .38);
+      border-radius: 150px 150px 18px 18px;
+      pointer-events: none
+    }
+
+    .content>* {
+      position: relative
+    }
+
+    .kicker {
+      font: 11px Arial, sans-serif;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #9a7538
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 58px);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--wine);
+      margin: 12px 0 8px
+    }
+
+    .amp {
+      color: var(--gold);
+      font-style: italic
+    }
+
+    .intro {
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 510px;
+      margin: 12px auto 22px
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px auto;
+      color: var(--gold);
+      font-size: 21px
+    }
+
+    .ornament:before,
+    .ornament:after {
+      content: "";
+      width: 76px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold))
+    }
+
+    .ornament:after {
+      transform: rotate(180deg)
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 530px;
+      margin: 24px auto
+    }
+
+    .detail {
+      padding: 18px 12px;
+      border: 1px solid #e4d1a9;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .68);
+      box-shadow: 0 5px 18px rgba(120, 83, 39, .05)
+    }
+
+    .symbol {
+      font-size: 22px;
+      color: #ae7d2d
+    }
+
+    .label {
+      display: block;
+      margin: 7px 0 5px;
+      font: 10px Arial, sans-serif;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #9b7942
+    }
+
+    .value {
+      font-size: 19px;
+      line-height: 1.4;
+      color: var(--wine)
+    }
+
+    .venue {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 22px 18px;
+      border: 1px solid #d8bd83;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fffaf1, #f8edda)
+    }
+
+    .venue-name {
+      font-size: 20px;
+      line-height: 1.4;
+      color: var(--wine);
+      font-weight: bold
+    }
+
+    .venue-address {
+      font-size: 16px;
+      line-height: 1.65;
+      margin-top: 7px
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 11px;
+      margin: 24px auto 0
+    }
+
+    .btn {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      background: var(--wine);
+      color: #fffaf1;
+      text-decoration: none;
+      font: 14px Arial, sans-serif;
+      letter-spacing: .02em;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px #682b3628
+    }
+
+    .btn.light {
+      background: transparent;
+      color: var(--wine)
+    }
+
+    .countdown {
+      margin: 28px auto 0;
+      padding: 18px 12px 4px;
+      border-top: 1px solid #e6d5b4;
+      max-width: 500px
+    }
+
+    .countdown-title {
+      font: 10px Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #98753e
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px
+    }
+
+    .unit {
+      min-width: 66px;
+      padding: 10px 7px;
+      background: #fffaf1;
+      border: 1px solid #eadbbd;
+      border-radius: 12px
+    }
+
+    .unit strong {
+      display: block;
+      font-size: 23px;
+      font-weight: 400;
+      color: var(--wine);
+      font-variant-numeric: tabular-nums
+    }
+
+    .unit span {
+      font: 9px Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .closing {
+      margin: 27px auto 0;
+      color: #8b6740;
+      font-size: 17px;
+      font-style: italic
+    }
+
+    .footer {
+      text-align: center;
+      color: #967d61;
+      font: 11px Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 18px 8px 0
+    }
+
+    @media(max-width:420px) {
+      .page {
+        padding: 8px
+      }
+
+      .photo-hero {
+        height: 270px
+      }
+
+      .content {
+        padding: 25px 16px 32px
+      }
+
+      .details {
+        gap: 8px
+      }
+
+      .detail {
+        padding: 15px 7px
+      }
+
+      .value {
+        font-size: 17px
+      }
+
+      .unit {
+        min-width: 57px
+      }
+
+      .timer {
+        gap: 6px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      .btn {
+        transition: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <article class="invite">
+      <header class="photo-hero">
+        <img src="couple-photo.jpg" alt="Jibin and Nikhila smiling together">
+        <div class="photo-caption">A new chapter · A lifetime of love</div>
+      </header>
+      <section class="content">
+        <div class="kicker">Together with our families</div>
+        <h1>Jibin <span class="amp">&amp;</span> Nikhila</h1>
+        <p class="intro">With joyful hearts, we invite you to join us as we celebrate our wedding. Your presence and
+          blessings will make our special day even more meaningful.</p>
+        <div class="ornament">❧</div>
+        <div class="details">
+          <div class="detail">
+            <div class="symbol">✧</div>
+            <span class="label">Wedding day</span>
+            <div class="value">Thursday<br>14 January 2027</div>
+          </div>
+          <div class="detail">
+            <div class="symbol">◷</div>
+            <span class="label">Time</span>
+            <div class="value">10:00 AM</div>
+          </div>
+        </div>
+        <div class="venue">
+          <div class="symbol">⌖</div>
+          <span class="label">Wedding venue</span>
+          <div class="venue-name">NBT Cultural And Education Center</div>
+          <div class="venue-address">Puthenkunnu, Sulthan Bathery Road,<br>Gudalur</div>
+        </div>
+        <div class="actions">
+          <a class="btn" target="_blank" rel="noopener"
+            href="https://www.google.com/maps/search/?api=1&amp;query=NBT+Cultural+And+Education+Center%2C+Puthenkunnu%2C+Sulthan+Bathery+Road%2C+Gudalur">View
+            venue on Maps ↗</a>
+          <button class="btn light" type="button" onclick="shareInvite()">Share invitation ↗</button>
+        </div>
+        <div class="countdown">
+          <div class="countdown-title">The celebration begins in</div>
+          <div class="timer" id="timer">
+            <div class="unit"><strong>--</strong><span>Days</span></div>
+            <div class="unit"><strong>--</strong><span>Hours</span></div>
+            <div class="unit"><strong>--</strong><span>Minutes</span></div>
+            <div class="unit"><strong>--</strong><span>Seconds</span></div>
+          </div>
+        </div>
+        <p class="closing">We look forward to celebrating with you.</p>
+      </section>
+    </article>
+    <div class="footer">With love · Jibin &amp; Nikhila</div>
+  </main>
+  <script>
+    const weddingDate = new Date('2027-01-14T10:00:00+05:30').getTime();
+    function updateCountdown() {
+      const el = document.getElementById('timer');
+      const diff = weddingDate - Date.now();
+      if (diff <= 0) { el.innerHTML = '<div class="closing">Today is the special day!</div>'; return; }
+      const values = [Math.floor(diff / 86400000), Math.floor(diff % 86400000 / 3600000), Math.floor(diff % 3600000 / 60000), Math.floor(diff % 60000 / 1000)];
+      const labels = ['Days', 'Hours', 'Minutes', 'Seconds'];
+      el.innerHTML = values.map((v, i) => `<div class="unit"><strong>${String(v).padStart(2, '0')}</strong><span>${labels[i]}</span></div>`).join('');
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+    async function shareInvite() {
+      const shareData = { title: 'Jibin & Nikhila | Wedding Invitation', text: 'Join us to celebrate the wedding of Jibin & Nikhila on Thursday, 14 January 2027 at 10:00 AM. Venue: NBT Cultural And Education Center, Puthenkunnu, Sulthan Bathery Road, Gudalur.', url: location.href };
+      try { if (navigator.share) { await navigator.share(shareData); } else if (navigator.clipboard) { await navigator.clipboard.writeText(shareData.text + ' ' + shareData.url); alert('Invitation details and link copied. Share them with your guests.'); } else { prompt('Copy your invitation details:', shareData.text + ' ' + shareData.url); } } catch (e) { }
+    }
+  </script>
+</body>
+
+</html>
